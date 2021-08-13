@@ -1,0 +1,17 @@
+.container {
+    max-width: 1140px; // (1110 + 30 gutter)
+    margin: 0 auto;
+    padding: 0 15px;
+
+    
+    @include pad() {
+        max-width: 720px; // (690 + 30 gutter)
+    }
+
+    @include mobile() {
+        max-width: 375px; // (345 + 30 gutter)
+    }
+}
+
+// 非 RWD：1110(1920-405*2) > 690(768-39*2) > 345(375-15*2)
+// RWD：width 改為 max-width(必須設定為 px，不可為百分比 %) / 增加兩側 padding 距離 (取決於 gutter 寬度除以 2)
